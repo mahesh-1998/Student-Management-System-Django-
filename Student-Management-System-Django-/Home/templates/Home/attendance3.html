@@ -1,0 +1,67 @@
+{%extends "Home/base_teacher.html"%}
+
+{% block content %}
+
+<table>
+        <td><form action="{% url 'attendance1' %}">
+            <button type="submit" name=year value="FE" class="btn btn-primary">First Year</button>
+        </form></td>
+        <td><form action="{% url 'attendance2' %}">
+            <button type="submit" name=year value="SE" class="btn btn-primary">Second Year</button>
+        </form></td>
+        <td><form action="{% url 'attendance3' %}">
+            <button type="submit" name=year value="TE" class="btn btn-primary">Third Year</button>
+        </form></td>
+        <td><form action="{% url 'attendance4' %}">
+            <button type="submit" name=year value="BE" class="btn btn-primary">Forth Year</button>
+        </form></td>
+</table>
+
+
+
+
+
+<form action="attendance" method="POST">
+  {%csrf_token%}
+<div class="form-group">
+    <label for="exampleFormControlInput1">Date</label><br>
+    <input type="date" name="attend-date"> required<br><br>   
+
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">PRN-ID</th>
+        <th scope="col">First-Name</th>
+        <th scope="col">Lirst-Name</th>
+        <th scope="col">Status</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {%for student in students%}
+        
+      <tr>
+        <td><input type="text" name="prn[]" value={{student.PRN}}><input type='hidden' name="dob[]" value={{student.dob}}></td>
+        <td><input type="text" name="first_name" value={{student.first_name}}></td>
+        <td><input type="text" name="last_name" value={{student.last_name}}></td>
+        <td><input id='testName' type='checkbox' value='Yes' name='testName[]'>
+          <input id='testNameHidden' type='hidden' value='No' name='testName[]'></td>
+        {%endfor%}       
+        
+    
+      </tr>
+        
+        
+       
+      </form> 
+    </tbody>
+  </table>
+
+  <br>
+  <button type="submit" class="btn btn-primary">ADD</button>
+  
+
+
+{% endblock content%}

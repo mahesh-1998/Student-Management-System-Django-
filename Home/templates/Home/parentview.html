@@ -1,0 +1,179 @@
+{% block content %}
+<!-- {{ showdata }}
+{{count}} -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+    
+    .flip-card-back {
+      background-color: #2980b9;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    </style>
+    </head>
+    <body class="">
+        <!-- Header -->
+        <div class="w3-content" style="max-width:1400px">
+    <header class="w3-container w3-dark-grey w3-padding-32 w3-margin-top"> 
+        <h1><b>Welcome</b></h1>
+        <p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
+    </header>
+        </div>
+            <div class="container mt-4">
+                    <div class="row">
+                      <div class="col-sm">
+                            <div class="card text-white bg-dark mb-3 ml-1" style="max-width: 18rem;">
+                                    <div class="card-header">INFORMATION</div>
+                                    <div class="card-body">
+                                      <h3 class="card-title">{{ showdata.first_name }} {{ showdata.last_name }}</h3>
+                                      <h5 class="card-title"><i class="fa fa-phone"></i></i> {{ showdata.mobile_no }}</h5>
+                                      <h5 class="card-title"><i class="fa fa-envelope"></i> {{ showdata.email }}</h5>
+                                      <h5 class="card-title"><i class="fa fa-heart"></i> {{ showdata.address }}</h5>
+                                      <h5 class="card-title"><i class="fa fa-birthday-cake"></i> {{ showdata.dob }}</h5>
+                                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                    </div>
+                                  </div>
+                            <!-- <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                        <img src="img.jpg" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>{{ showdata.first_name }} {{ showdata.last_name }}</h1> 
+                                        <p>Mobile No:{{ showdata.mobile_no }}</p> 
+                                        <p>Email    :{{ showdata.email }}</p>
+                                        <p>Address  :{{ showdata.address }}</p> 
+                                        <p>D/B      :{{ showdata.dob }}</p> 
+                                      </div>
+                                    </div>
+                                  </div> -->
+                      </div>
+                      
+                      <div class="col-sm">
+
+                            <div class="card text-white bg-dark mb-3 ml-4" style="max-width: 18rem;">
+                                    <div class="card-header">ATTENDANCE</div>
+                                    <div class="card-body">
+                                    <h3 class="card-title"><centre><i class="fa fa-bar-chart"></i></centre></h3>
+                                    <h2 class="card-title"> {{ showdata.first_name }} Attended <span class="w3-tag">{{count}}</span> Lectures Today</h2>
+                                    <h3 class="card-title"></h3>
+                                    
+                                      
+                                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                    </div>
+                                  </div>
+                            <!-- <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                      <div class="flip-card-front">
+                                        <img src="img.jpg" style="width:300px;height:300px;">
+                                      </div>
+                                      <div class="flip-card-back">
+                                        <h1>{{ showdata.first_name }} Attended {{count}} Lectures Today</h1> 
+                                        
+                                      </div>
+                                    </div>
+                                  </div> -->
+                      
+                    </div>     
+                      <div class="col-sm">
+                            <div class="card text-white bg-dark mb-3 ml-5" style="max-width: 18rem;">
+                                    <div class="card-header">EXAM</div>
+                                    <div class="card-body">
+                                    
+                                    <h3 class="card-title"></h3>
+                                    <h3 class="card-title"><br></h3><br><br><br><br><br>
+                                    
+                                    
+                                      
+                                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                    </div>
+                                  </div>
+                      </div>
+                      
+                    </div>
+                    
+                </div>
+                <div class="col-sm">
+                        <div class="card text-white bg-dark mb-2 w-100 "  >
+                                <div class="card-header">CONTACT US</div>
+                                <div class="card-body">
+                                
+                                <h3 class="card-title"  ><i class="fa fa-phone"></i> +91 020 24228258/65/79</h3>
+                                <h3 class="card-title"><i class="fa fa-envelope"></i> info@pvgcoet.ac.in<br></h3>
+                                
+                                
+                                  
+                                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                </div>
+                              </div>
+                  </div>
+
+            
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <br>  
+  <p>© PVG's College of Engineering and Technology, Pune.</p>
+</footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+{% endblock %}
+
+

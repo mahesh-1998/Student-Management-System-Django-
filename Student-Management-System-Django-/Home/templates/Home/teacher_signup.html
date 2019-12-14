@@ -1,0 +1,120 @@
+{% extends "Home/base_home.html" %}
+
+            {% block content%}
+            <form  method="POST" action="{% url 'teacher-register'%}">
+                        {% csrf_token  %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">First Name</label>
+            <input type="username" class="form-control" name="first_name" id="exampleFormControlInput1" placeholder="Enter your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Last Name</label>
+            <input type="username" class="form-control" name="last_name" id="exampleFormControlInput1" placeholder="Enter your last name" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">T-PRN</label> 
+                        <input type="number" class="form-control" name="tprn" id="exampleFormControlInput1" placeholder="Enter your unique PRN" required> 
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Mobile NO</label>
+                        <input type="number" class="form-control" name="mobile_no" id="exampleFormControlInput1" placeholder="Enter your mobile no"required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Email</label>
+                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Gender</label>
+
+          
+          <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="male"id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="female" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Female
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="others" id="exampleRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="exampleRadios3">
+                          Others
+                        </label>
+                      </div>
+            </div>
+        <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Address</label>
+                                <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        </div>
+          <div class="form-group">
+                        <label for="exampleFormControlSelect1">State</label>
+                        <select class="form-control" name="state" id="exampleFormControlSelect1" required>
+                                        <option value="MH">Maharashra</option>
+                                        <option value="KN">Karnataka</option>
+                                        <option value="GJ">Gujarat</option>
+                                        <option value="JK">JK</option>
+                        </select>
+        </div>
+          <div class="form-group">
+                        <label for="exampleFormControlSelect1">Course</label>
+                        <select class="form-control" name="course" id="exampleFormControlSelect1" required>
+                                        <option value="E">Engg</option>
+                                        <option value="M">MBA</option>
+                        </select>
+        </div>
+        <div class="form-group">
+                                <label for="exampleFormControlSelect1">Department</label>
+                                <select class="form-control" name="branch" id="exampleFormControlSelect1" required>
+                                                <option value="CS">CS</option>
+                                                <option value="MECh">MECH</option>
+                                </select>
+                            </div>
+        <div class="form-group">
+                                <label for="exampleFormControlSelect1">Teaches To</label>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="years" value="1">
+            <label class="form-check-label" for="inlineCheckbox1">First Year</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="years" value="2">
+            <label class="form-check-label" for="inlineCheckbox2">Second Year</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="years" value="3">
+                <label class="form-check-label" for="inlineCheckbox2">Third Year</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="years" value="4">
+                <label class="form-check-label" for="inlineCheckbox3">Last Year</label>
+            </div>
+        </div>
+
+       
+        <div class="form-group col-md-6 col-lg-6 col-sm-6">
+                <label>Choose Subjects</label>
+                <select name="subjects" data-style="btn-default" class="selectpicker form-control" multiple data-max-options="4">
+                      <option value="100">DSA(100)</option>
+                      <option value="200">SPOS(200)</option>
+                   </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Joining Date</label><br>
+            <input type="date" name="doj"> required<br><br>   
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="control-label">Password</label>
+            <div class="form-inline row">
+            <div class="form-group col-sm-6">
+                <input type="password" data-minlength="6" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                 <div class="help-block">Minimum of 6 characters</div>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-secondary">Register</button>
+        </form>
+    {%endblock content%}
+</html>

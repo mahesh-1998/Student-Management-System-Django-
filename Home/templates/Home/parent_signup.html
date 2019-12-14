@@ -1,0 +1,61 @@
+{% extends "Home/base_home.html" %}
+
+            {% block content%}
+            <form  method="POST" action="{% url 'parent-register'%}">
+                        {% csrf_token  %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">First Name</label>
+            <input type="username" class="form-control" name="first_name" id="exampleFormControlInput1" placeholder="Enter your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Last Name</label>
+            <input type="username" class="form-control" name="last_name" id="exampleFormControlInput1" placeholder="Enter your last name" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Student-PRN</label> 
+                        <input type="number" class="form-control" name="std_id" id="exampleFormControlInput1" placeholder="Enter your child's PRN" required> 
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Mobile NO</label>
+                        <input type="number" class="form-control" name="mobile_no" id="exampleFormControlInput1" placeholder="Enter your mobile no"required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Email</label>
+                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Gender</label>
+
+          
+          <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="male"id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="female" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Female
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="others" id="exampleRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="exampleRadios3">
+                          Others
+                        </label>
+                      </div>
+            </div>
+        <div class="form-group">
+            <label for="inputPassword" class="control-label">Password</label>
+            <div class="form-inline row">
+            <div class="form-group col-sm-6">
+                <input type="password" data-minlength="6" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                 <div class="help-block">Minimum of 6 characters</div>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-secondary">Register</button>
+        </form>
+    {%endblock content%}
+</html>

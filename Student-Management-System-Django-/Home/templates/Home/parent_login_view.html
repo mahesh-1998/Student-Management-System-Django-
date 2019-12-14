@@ -1,0 +1,17 @@
+{%extends "Home/base_parent.html"%}
+{% block content%}
+{% csrf_token %}
+            <article class="media content-section">
+                    <div class="media-body">
+                      <div class="article-metadata">
+                        <p class="mr-2" >Email:{{student.email}}</p>
+                      </div>
+                      <h2><p class="article-title">Name:{{student.first_name}} {{student.last_name}}</p></h2>
+                      <div class="article-content">
+                          <p>DOB:{{student.dob}}</p>  
+                          <p>Mobile:{{student.mobile_no}}</p>  
+                          <p>Gender:{{student.gender}}</p>
+                      </div>
+                    </div>
+                  </article>
+{% endblock content %}

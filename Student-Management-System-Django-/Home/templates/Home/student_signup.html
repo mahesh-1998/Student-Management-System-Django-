@@ -1,0 +1,163 @@
+{% extends "Home/base_home.html" %}
+
+            {% block content%}
+            <form  method="POST" action="{% url 'student-register' %}">
+                         {% csrf_token  %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">First Name</label>
+            <input type="username" class="form-control" name="first_name" id="exampleFormControlInput1" placeholder="Enter your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Last Name</label>
+            <input type="username" class="form-control" name="last_name" id="exampleFormControlInput1" placeholder="Enter your last name" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">PRN</label> 
+                        <input type="number" class="form-control" name="prn"  id="exampleFormControlInput1" placeholder="Enter your unique PRN" required> 
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Mobile NO</label>
+                        <input type="number" class="form-control"  name="mobile_no" id="exampleFormControlInput1" placeholder="Enter your mobile no"required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Email</label>
+                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+                        <label for="exampleFormControlInput1">Gender</label>
+
+          </div>
+          <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="male"id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="female" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Female
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="others" id="exampleRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="exampleRadios3">
+                          Others
+                        </label>
+                      </div>
+        <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Address</label>
+                                <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        </div>
+          <div class="form-group">
+                        <label for="exampleFormControlSelect1">State</label>
+                        <select class="form-control" name="state" id="exampleFormControlSelect1" required>
+                                        <option value="MH">Maharashra</option>
+                                        <option value="KN">Karnataka</option>
+                                        <option value="GJ">Gujarat</option>
+                                        <option value="JK">JK</option>
+                        </select>
+        </div>
+          <div class="form-group">
+                        <label for="exampleFormControlSelect1">Course</label>
+                        <select class="form-control" name="course" id="exampleFormControlSelect1" required>
+                                        <option value="E">Engg</option>
+                                        <option value="M">MBA</option>
+                        </select>
+        </div>
+        <div class="form-group">
+                                <label for="exampleFormControlSelect1">Branch</label>
+                                <select class="form-control" name="branch" id="exampleFormControlSelect1" required>
+                                                <option value="CS">CS</option>
+                                                <option value="MECh">MECH</option>
+                                </select>
+                              </div>
+        <div class="form-group">
+                                        <label for="exampleFormControlSelect1">YEAR</label>
+                                        <select class="form-control" name="div" id="exampleFormControlSelect1" required>
+                                                        <option value="TE">THIRD YEAR</option>
+                                                        <option value="SE">SECOND YEAR</option>
+                                        </select>
+        </div>
+        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Admission Category</label>
+                        <select class="form-control" name="adm_cat" id="exampleFormControlSelect1" required>
+                                        <option value="cap">CAP</option>
+                                        <option value="management">MANAGEMENT</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                                <label for="exampleFormControlInput1">Date</label><br>
+                                <input type="date" name="dob"> required<br><br>   
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="control-label">Password</label>
+                        <div class="form-inline row">
+                          <div class="form-group col-sm-6">
+                            <input type="password" data-minlength="6" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                            <div class="help-block">Minimum of 6 characters</div>
+                          </div>
+
+                      </div>
+                      <button type="submit" class="btn btn-secondary">Register</button>
+
+          
+
+        </form>
+
+            <form align="center" method="POST" action="register/">
+                {% csrf_token  %}
+                <input type="text" name="type" style="visibility:hidden"><br>
+                <input type="radio" name="user" value="teacher" checked> Teacher<br>
+                <input type="radio" name="user" value="student"> Student<br>
+                <input type="radio" name="user" value="admin"> Admin<br><br>
+                <script>
+                    var value = document.getElementsByName("user").value = "student"
+                </script>
+                First Name:<br>
+                <input type="text" name="first_name" required><br>
+                Last Name:<br>
+                <input type="text" name="last_name" required><br><br>
+                PRN:<br>
+                <input type="text" name="prn" required><br><br>
+                Mobile No:<br>
+                <input type="text" name="mobile_no" required><br><br>
+                Email:<br>
+                <input type="text" name="email" required><br><br>
+                Gender:
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="others"> Others<br><br>
+                Address
+                <textarea rows="4" cols="50" name="address" required>
+                </textarea><br><br>
+                State:
+                <select name="state" required>
+                        <option value="MH">Maharashra</option>
+                        <option value="KN">Karnataka</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="JK">JK</option>
+                </select><br><br>
+                Course:
+                <select name="course" required>
+                        <option value="E">Engg</option>
+                        <option value="M">MBA</option>
+                </select><br><br>
+                Branch:
+                <select name="branch" required>
+                        <option value="CS">CS</option>
+                        <option value="M">MECH</option>
+                </select><br><br>
+                DIV/YEAR:
+                <select name="div" required>
+                        <option value="TE">THIRD YEAR</option>
+                        <option value="SE">SECOND YEAR</option>
+                </select><br><br>
+                Admission Cat:<br>
+                <input type="text" name="adm_cat" required><br><br>
+                DOB: <input type="date" name="dob"><br><br>
+                <p>Here we have to create teacher form</p>
+                <button type="submit">REGISTER</button><br>
+            </form> 
+    {%endblock content%}
+</html>
